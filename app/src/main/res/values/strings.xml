@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PredictionApp</string>
+    <string name="textview">TextView</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="textview_land">TextView</string>
+    <string name="no_land">No</string>
+    <string name="yes_land">Yes</string>
+</resources>
