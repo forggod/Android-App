@@ -6,4 +6,12 @@
     <string name="textview_land">TextView</string>
     <string name="no_land">No</string>
     <string name="yes_land">Yes</string>
+    <string name="question_sky">The sky is blue</string>
+    <string name="question_water">The water is wet</string>
+    <string name="question_human">You are human</string>
+    <string name="question_oswindows">Windows is none operating system</string>
+    <string name="question_marce">You from marce</string>
+    <string name="question_google">Google is a man</string>
+    <string name="correct_toast">Правильно</string>
+    <string name="incorrect_toast">Неверно</string>
 </resources>
