@@ -22,6 +22,6 @@ class Quiz_view_model : ViewModel() {
     }
 
     fun moveToPrev() {
-        currentindex = (currentindex - 1) % questionBank.size
+        currentindex = (currentindex - 1 + questionBank.size) % questionBank.size
     }
 }
