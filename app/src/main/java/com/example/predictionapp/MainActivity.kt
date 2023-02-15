@@ -42,10 +42,10 @@ class MainActivity : AppCompatActivity() {
         textview_main = findViewById(R.id.textView_main)
 
         button_no.setOnClickListener{
-            checkAnswer(true)
+            checkAnswer(false)
         }
         button_yes.setOnClickListener{
-            checkAnswer(false)
+            checkAnswer(true)
         }
         nextQuestion.setOnClickListener{
             quizViewModel.moveToNext()
