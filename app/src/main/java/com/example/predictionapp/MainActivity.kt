@@ -1,5 +1,6 @@
 package com.example.predictionapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -54,6 +55,11 @@ class MainActivity : AppCompatActivity() {
         prevQuestion.setOnClickListener {
             quizViewModel.moveToPrev()
             updateQuestion()
+        }
+        findViewById<Button>(R.id.button_callcheat).setOnClickListener {
+            val intend = Intent(this, CheatActivity::class.java)
+            intent.putExtra("answer",quizViewModel.currentQuestionAnswer)
+            startActivity(intent)
         }
         updateQuestion()
     }

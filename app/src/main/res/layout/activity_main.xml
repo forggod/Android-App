@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/textView_main"
-        android:layout_width="0dp"
-        android:layout_height="26dp"
+        android:layout_width="48dp"
+        android:layout_height="45dp"
         android:gravity="center_horizontal"
         android:text="@string/textview"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -65,4 +65,16 @@
         app:layout_constraintVertical_bias="0.318"
         app:srcCompat="@android:drawable/ic_media_ff"
         tools:ignore="ContentDescription,ImageContrastCheck" />
+
+    <Button
+        android:id="@+id/button_callcheat"
+        android:layout_width="92dp"
+        android:layout_height="48dp"
+        android:text="Cheat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_next"
+        app:layout_constraintVertical_bias="0.811" />
 </androidx.constraintlayout.widget.ConstraintLayout>
