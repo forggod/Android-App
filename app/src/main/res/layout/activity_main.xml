@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/textView_main"
-        android:layout_width="48dp"
-        android:layout_height="45dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/textview"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -70,7 +70,7 @@
         android:id="@+id/button_callcheat"
         android:layout_width="92dp"
         android:layout_height="48dp"
-        android:text="Cheat"
+        android:text="@string/cheat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.949"
