@@ -14,4 +14,7 @@
     <string name="question_google">Google is a man</string>
     <string name="correct_toast">Правильно</string>
     <string name="incorrect_toast">Неверно</string>
+    <string name="cheat_answer">Show answer</string>
+    <string name="text_cheat">Text Cheat</string>
+    <string name="cheat">Cheat</string>
 </resources>
