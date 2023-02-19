@@ -73,4 +73,8 @@ class MainActivity : AppCompatActivity() {
         updateQuestion()
     }
 
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        isCheat = savedInstanceState.getBoolean("EXTRA_ANSWER_SHOWN")
+    }
 }
