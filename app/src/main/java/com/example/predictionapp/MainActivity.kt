@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         textview_main = findViewById(R.id.textView_main)
 
         button_no.setOnClickListener {
-            if (isCheat != true){
+            if (isCheat != true) {
                 checkAnswer(false)
             }
         }
@@ -72,8 +72,5 @@ class MainActivity : AppCompatActivity() {
         }
         updateQuestion()
     }
-    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
-        super.onRestoreInstanceState(savedInstanceState)
-        isCheat = savedInstanceState.getBoolean("EXTRA_ANSWER_SHOWN")
-    }
+
 }
