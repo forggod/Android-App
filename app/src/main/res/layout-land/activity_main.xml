@@ -5,8 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/button_callcheat"
+        android:layout_width="92dp"
+        android:layout_height="48dp"
+        android:text="@string/cheat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_next"
+        app:layout_constraintVertical_bias="0.811" />
+
     <TextView
-        android:id="@+id/textView_main_land"
+        android:id="@+id/textView_main"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -18,7 +30,7 @@
         app:layout_constraintVertical_bias="0.383" />
 
     <Button
-        android:id="@+id/button_no_land"
+        android:id="@+id/button_no"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="232dp"
@@ -26,11 +38,11 @@
         android:backgroundTint="#FF8A65"
         android:text="@string/no_land"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_main_land"
+        app:layout_constraintTop_toBottomOf="@+id/textView_main"
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/button_yes_land"
+        android:id="@+id/button_yes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -38,29 +50,29 @@
         android:backgroundTint="#81C784"
         android:text="@string/yes_land"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_main_land"
+        app:layout_constraintTop_toBottomOf="@+id/textView_main"
         tools:ignore="TextContrastCheck" />
 
     <ImageView
-        android:id="@+id/imageView_prev_land"
+        android:id="@+id/imageView_prev"
         android:layout_width="47dp"
         android:layout_height="46dp"
         android:layout_marginStart="276dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_no_land"
+        app:layout_constraintTop_toBottomOf="@+id/button_no"
         app:layout_constraintVertical_bias="0.48"
         app:srcCompat="@android:drawable/ic_media_rew"
         tools:ignore="ContentDescription,ImageContrastCheck" />
 
     <ImageView
-        android:id="@+id/imageView_next_land"
+        android:id="@+id/imageView_next"
         android:layout_width="48dp"
         android:layout_height="47dp"
         android:layout_marginEnd="276dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_yes_land"
+        app:layout_constraintTop_toBottomOf="@+id/button_yes"
         app:layout_constraintVertical_bias="0.484"
         app:srcCompat="@android:drawable/ic_media_ff"
         tools:ignore="ContentDescription,ImageContrastCheck" />
