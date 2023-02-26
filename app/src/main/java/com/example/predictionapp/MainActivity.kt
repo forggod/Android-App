@@ -1,5 +1,7 @@
 package com.example.predictionapp
 
+import android.app.Activity
+import android.app.Instrumentation.ActivityResult
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
 
 class MainActivity : AppCompatActivity() {
@@ -24,12 +27,24 @@ class MainActivity : AppCompatActivity() {
         provider.get(Quiz_view_model::class.java)
     }
 
+    private val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+        result ->
+        if (result.resultCode == Activity.RESULT_OK){
+            val data: Intent? = result.data
+            quizViewModel.isCheater=data?.getBooleanExtra(EXTRA_ANSWER_SHOWN,false)?:false
+        }
+    }
     private fun updateQuestion() {
         val questionTextResId = quizViewModel.currentQuestionText
         textview_main.setText(questionTextResId)
     }
 
     private fun checkAnswer(userAnswer: Boolean) {
+        if(quizViewModel.isCheater){
+            Toast.makeText(this@MainActivity,"Stop cheating",Toast.LENGTH_SHORT)
+                .show()
+            return
+        }
         val correctAnswer = quizViewModel.currentQuestionAnswer
         val messageResId = when {
             userAnswer == correctAnswer -> R.string.correct_toast
@@ -65,16 +80,13 @@ class MainActivity : AppCompatActivity() {
             quizViewModel.moveToPrev()
             updateQuestion()
         }
-        findViewById<Button>(R.id.button_callcheat).setOnClickListener {
+        findViewById<Button>(R.id.button_callcheat).setOnClickListener {/*
             val intent = Intent(this, CheatActivity::class.java)
-            intent.putExtra("answer", quizViewModel.currentQuestionAnswer)
-            startActivity(intent)
+            intent.putExtra("answer", quizViewModel.currentQuestionAnswer)*/
+           val intent = CheatActivity.newIntent(this,quizViewModel.currentQuestionAnswer)
+            resultLauncher.launch(intent)
         }
         updateQuestion()
     }
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
-        super.onRestoreInstanceState(savedInstanceState)
-        isCheat = savedInstanceState.getBoolean("EXTRA_ANSWER_SHOWN")
-    }
 }
