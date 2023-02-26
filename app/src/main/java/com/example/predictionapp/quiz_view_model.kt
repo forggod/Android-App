@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 
 class Quiz_view_model : ViewModel() {
     private val questionBank = listOf(
-        Quiz(R.string.question_sky, true),
+        Quiz(R.string.question_sky,  true),
         Quiz(R.string.question_water, true),
         Quiz(R.string.question_human, true),
         Quiz(R.string.question_oswindows, false),
@@ -17,6 +17,11 @@ class Quiz_view_model : ViewModel() {
     val currentQuestionText: Int
         get() = questionBank[currentindex].textResId
 
+var isCheater
+    get()=questionBank[currentindex].isCheat
+    set(value){
+        questionBank[currentindex].isCheat=value
+    }
     fun moveToNext() {
         currentindex = (currentindex + 1) % questionBank.size
     }
